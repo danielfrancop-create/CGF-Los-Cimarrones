@@ -7126,24 +7126,43 @@ function enviarDatosGoogleSheets(tipo, record) {
     } else {
         // Para gastos y ventas (JSONP)
         const callbackName = 'jsonpCallback_' + Math.round(100000 * Math.random());
+        
+        // 1. Declarar script y timeout ANTES de usarlos (esto arregla el ReferenceError)
+        const script = document.createElement('script');
+        let timeoutId;
+
         window[callbackName] = function(response) {
+            clearTimeout(timeoutId);
             if (response && response.success) {
                 console.log(`Registro ${tipo} guardado exitosamente.`);
+                // Recargar datos para ver el nuevo registro en la tabla
+                if (typeof fetchData === 'function') {
+                    fetchData(true);
+                }
             } else {
                 console.error(`Error al guardar ${tipo}: ` + (response ? response.error : "Desconocido"));
+                alert("Error al guardar: " + (response ? response.error : "El servidor no respondió correctamente."));
             }
             if (document.body.contains(script)) document.body.removeChild(script);
             delete window[callbackName];
         };
 
-        const script = document.createElement('script');
         script.src = MI_GAS_URL + '?action=' + tipo + '&callback=' + callbackName + '&args=' + encodeURIComponent(JSON.stringify([record]));
         
         script.onerror = function() {
+            clearTimeout(timeoutId);
             console.error("Error de conexión al intentar guardar.");
+            alert("Error de conexión. Revisa tu internet o la URL del servidor.");
             if (document.body.contains(script)) document.body.removeChild(script);
             delete window[callbackName];
         };
+
+        // 2. Timeout de seguridad (15 segundos)
+        timeoutId = setTimeout(() => {
+            console.error(`Timeout: el servidor no respondió para ${tipo}`);
+            if (document.body.contains(script)) document.body.removeChild(script);
+            delete window[callbackName];
+        }, 15000);
 
         document.body.appendChild(script);
     }
