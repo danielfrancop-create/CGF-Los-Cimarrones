@@ -11,7 +11,7 @@
                     <p class="text-xs text-emerald-300 mt-1">Geolocalización, Semáforo Fenológico por Estado de Cultivo y Bitácora Fotográfica en tiempo real.</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="px-3 py-1 bg-emerald-900 text-emerald-300 text-xs font-bold rounded-full border border-emerald-700/60">8 Lotes Delimitados</span>
+                    <span class="px-3 py-1 bg-emerald-900 text-emerald-300 text-xs font-bold rounded-full border border-emerald-700/60">11 Lotes Delimitados</span>
                 </div>
             </div>
 
@@ -48,133 +48,197 @@
             </div>
 
             <!-- Contenedor del Mapa Interactivo (Foto Google Earth) -->
-            <div class="relative w-full max-w-md mx-auto overflow-hidden rounded-xl shadow-2xl border border-slate-700 bg-slate-900">
-              
+            <div class="relative w-full min-h-[500px] overflow-hidden rounded-xl shadow-2xl border border-slate-700 bg-slate-900">
+
               <!-- Imagen Satelital Google Earth -->
               <img 
-                src="https://lh3.googleusercontent.com/d/1jyCBJDZvpdOdGY1pQijeAqYnuJKVIxE4" 
+                src="./mapa-finca.jpg" 
                 alt="Lotes Finca Los Sauces Google Earth" 
-                class="w-full h-auto block object-cover"
+                class="w-full h-auto min-h-[500px] block object-cover"
               />
 
               <!-- Capa SVG Interactiva -->
               <svg 
                 class="absolute inset-0 w-full h-full pointer-events-none" 
-                viewBox="0 0 778 1191" 
+                viewBox="0 0 540 960" 
                 preserveAspectRatio="none"
               >
                 <g class="pointer-events-auto cursor-pointer">
-                  
                   <!-- LOTE 1 -->
                   <polygon 
                     id="poly-lote-1"
                     data-lote="Lote 1" 
-                    points="550,801 407,901 551,1054 615,901" 
+                    points="186,610 229,610 258,720 252,810 220,840 180,840 160,740 170,660" 
                     class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
                     onclick="seleccionarLote('Lote 1')"
                   />
-                  <text x="530" y="930" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 1')">
-                    <tspan id="svg_title_Lote1" x="530" dy="0" font-weight="900" font-size="20" fill="#ffffff" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 1</tspan>
-                    <tspan id="svg_crop_Lote1" x="530" dy="22" font-weight="700" font-size="14" fill="#6EE7B7" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
-                    <tspan id="svg_pct_Lote1" x="530" dy="22" font-weight="800" font-size="14" fill="#FCD34D" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
-                  </text>
-
+                  
                   <!-- LOTE 2 -->
                   <polygon 
                     id="poly-lote-2"
                     data-lote="Lote 2" 
-                    points="519,729 338,828 398,898 547,792" 
+                    points="258,600 293,590 384,600 388,610 407,680 380,710 355,720 293,720 272,610" 
                     class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
                     onclick="seleccionarLote('Lote 2')"
                   />
-                  <text x="450" y="820" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 2')">
-                    <tspan id="svg_title_Lote2" x="450" dy="0" font-weight="900" font-size="20" fill="#ffffff" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">LOTE 2</tspan>
-                    <tspan id="svg_crop_Lote2" x="450" dy="22" font-weight="700" font-size="14" fill="#6EE7B7" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">Libre</tspan>
-                    <tspan id="svg_pct_Lote2" x="450" dy="22" font-weight="800" font-size="14" fill="#FCD34D" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">0%</tspan>
-                  </text>
-
+                  
                   <!-- LOTE 3 -->
                   <polygon 
                     id="poly-lote-3"
                     data-lote="Lote 3" 
-                    points="443,569 229,724 327,826 517,725" 
+                    points="243,550 368,550 378,590 384,600 258,600 257,590" 
                     class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
                     onclick="seleccionarLote('Lote 3')"
                   />
-                  <text x="380" y="710" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 3')">
-                    <tspan id="svg_title_Lote3" x="380" dy="0" font-weight="900" font-size="20" fill="#ffffff" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">LOTE 3</tspan>
-                    <tspan id="svg_crop_Lote3" x="380" dy="22" font-weight="700" font-size="14" fill="#6EE7B7" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">Libre</tspan>
-                    <tspan id="svg_pct_Lote3" x="380" dy="22" font-weight="800" font-size="14" fill="#FCD34D" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">0%</tspan>
-                  </text>
-
+                  
                   <!-- LOTE 4 -->
                   <polygon 
                     id="poly-lote-4"
                     data-lote="Lote 4" 
-                    points="384,451 149,647 225,713 442,560" 
+                    points="243,480 385,480 375,540 242,540" 
                     class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
                     onclick="seleccionarLote('Lote 4')"
                   />
-                  <text x="310" y="600" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 4')">
-                    <tspan id="svg_title_Lote4" x="310" dy="0" font-weight="900" font-size="20" fill="#ffffff" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">LOTE 4</tspan>
-                    <tspan id="svg_crop_Lote4" x="310" dy="22" font-weight="700" font-size="14" fill="#6EE7B7" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">Libre</tspan>
-                    <tspan id="svg_pct_Lote4" x="310" dy="22" font-weight="800" font-size="14" fill="#FCD34D" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">0%</tspan>
-                  </text>
-
+                  
                   <!-- LOTE 5 -->
                   <polygon 
                     id="poly-lote-5"
                     data-lote="Lote 5" 
-                    points="269,348 119,607 147,642 377,444" 
+                    points="234,420 383,420 385,480 234,480" 
                     class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
                     onclick="seleccionarLote('Lote 5')"
                   />
-                  <text x="240" y="510" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 5')">
-                    <tspan id="svg_title_Lote5" x="240" dy="0" font-weight="900" font-size="20" fill="#ffffff" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">LOTE 5</tspan>
-                    <tspan id="svg_crop_Lote5" x="240" dy="22" font-weight="700" font-size="14" fill="#6EE7B7" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">Libre</tspan>
-                    <tspan id="svg_pct_Lote5" x="240" dy="22" font-weight="800" font-size="14" fill="#FCD34D" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">0%</tspan>
-                  </text>
-
+                  
                   <!-- LOTE 6 -->
                   <polygon 
                     id="poly-lote-6"
                     data-lote="Lote 6" 
-                    points="486,364 383,399 463,483 491,454" 
+                    points="256,375 382,375 383,420 256,420" 
                     class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
                     onclick="seleccionarLote('Lote 6')"
                   />
-                  <text x="440" y="420" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 6')">
-                    <tspan id="svg_title_Lote6" x="440" dy="0" font-weight="900" font-size="20" fill="#ffffff" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">LOTE 6</tspan>
-                    <tspan id="svg_crop_Lote6" x="440" dy="22" font-weight="700" font-size="14" fill="#6EE7B7" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">Libre</tspan>
-                    <tspan id="svg_pct_Lote6" x="440" dy="22" font-weight="800" font-size="14" fill="#FCD34D" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">0%</tspan>
-                  </text>
-
+                  
                   <!-- LOTE 7 -->
                   <polygon 
                     id="poly-lote-7"
                     data-lote="Lote 7" 
-                    points="455,280 328,318 372,389 491,352" 
+                    points="264,310 402,310 382,375 264,375" 
                     class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
                     onclick="seleccionarLote('Lote 7')"
                   />
-                  <text x="410" y="340" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 7')">
-                    <tspan id="svg_title_Lote7" x="410" dy="0" font-weight="900" font-size="20" fill="#ffffff" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">LOTE 7</tspan>
-                    <tspan id="svg_crop_Lote7" x="410" dy="22" font-weight="700" font-size="14" fill="#6EE7B7" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">Libre</tspan>
-                    <tspan id="svg_pct_Lote7" x="410" dy="22" font-weight="800" font-size="14" fill="#FCD34D" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">0%</tspan>
-                  </text>
-
+                  
                   <!-- LOTE 8 -->
                   <polygon 
                     id="poly-lote-8"
                     data-lote="Lote 8" 
-                    points="406,16 324,237 366,281 486,252" 
+                    points="277,270 415,270 402,310 267,310" 
                     class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
                     onclick="seleccionarLote('Lote 8')"
                   />
-                  <text x="400" y="170" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 8')">
-                    <tspan id="svg_title_Lote8" x="400" dy="0" font-weight="900" font-size="20" fill="#ffffff" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">LOTE 8</tspan>
-                    <tspan id="svg_crop_Lote8" x="400" dy="22" font-weight="700" font-size="14" fill="#6EE7B7" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">Libre</tspan>
-                    <tspan id="svg_pct_Lote8" x="400" dy="22" font-weight="800" font-size="14" fill="#FCD34D" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.95));">0%</tspan>
+
+                  <!-- LOTE 9 -->
+                  <polygon 
+                    id="poly-lote-9"
+                    data-lote="Lote 9" 
+                    points="312,200 423,200 415,270 277,270" 
+                    class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
+                    onclick="seleccionarLote('Lote 9')"
+                  />
+
+                  <!-- LOTE 10 -->
+                  <polygon 
+                    id="poly-lote-10"
+                    data-lote="Lote 10" 
+                    points="293,135 410,135 423,200 312,200" 
+                    class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
+                    onclick="seleccionarLote('Lote 10')"
+                  />
+
+                  <!-- LOTE 11 -->
+                  <polygon 
+                    id="poly-lote-11"
+                    data-lote="Lote 11" 
+                    points="410,60 446,60 445,100 435,120 412,120 394,115 398,90 404,70" 
+                    class="lote-polygon fill-emerald-500/30 stroke-emerald-400 stroke-[3] hover:fill-emerald-500/60 transition-all"
+                    onclick="seleccionarLote('Lote 11')"
+                  />
+
+                  <!-- ETIQUETAS DINAMICAS FLOTANTES SOBRE SVG (LOTES 1 A 11) -->
+                  <!-- LOTE 1 -->
+                  <text x="210" y="735" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 1')">
+                    <tspan id="svg_title_Lote1" x="210" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 1</tspan>
+                    <tspan id="svg_crop_Lote1" x="210" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote1" x="210" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 2 -->
+                  <text x="330" y="655" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 2')">
+                    <tspan id="svg_title_Lote2" x="330" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 2</tspan>
+                    <tspan id="svg_crop_Lote2" x="330" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote2" x="330" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 3 -->
+                  <text x="315" y="570" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 3')">
+                    <tspan id="svg_title_Lote3" x="315" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 3</tspan>
+                    <tspan id="svg_crop_Lote3" x="315" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote3" x="315" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 4 -->
+                  <text x="310" y="510" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 4')">
+                    <tspan id="svg_title_Lote4" x="310" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 4</tspan>
+                    <tspan id="svg_crop_Lote4" x="310" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote4" x="310" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 5 -->
+                  <text x="310" y="450" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 5')">
+                    <tspan id="svg_title_Lote5" x="310" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 5</tspan>
+                    <tspan id="svg_crop_Lote5" x="310" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote5" x="310" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 6 -->
+                  <text x="320" y="395" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 6')">
+                    <tspan id="svg_title_Lote6" x="320" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 6</tspan>
+                    <tspan id="svg_crop_Lote6" x="320" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote6" x="320" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 7 -->
+                  <text x="325" y="340" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 7')">
+                    <tspan id="svg_title_Lote7" x="325" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 7</tspan>
+                    <tspan id="svg_crop_Lote7" x="325" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote7" x="325" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 8 -->
+                  <text x="340" y="290" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 8')">
+                    <tspan id="svg_title_Lote8" x="340" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 8</tspan>
+                    <tspan id="svg_crop_Lote8" x="340" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote8" x="340" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 9 -->
+                  <text x="350" y="235" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 9')">
+                    <tspan id="svg_title_Lote9" x="350" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 9</tspan>
+                    <tspan id="svg_crop_Lote9" x="350" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote9" x="350" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 10 -->
+                  <text x="355" y="170" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 10')">
+                    <tspan id="svg_title_Lote10" x="355" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 10</tspan>
+                    <tspan id="svg_crop_Lote10" x="355" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote10" x="355" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
+                  </text>
+
+                  <!-- LOTE 11 -->
+                  <text x="420" y="90" text-anchor="middle" class="pointer-events-auto cursor-pointer font-sans" onclick="seleccionarLote('Lote 11')">
+                    <tspan id="svg_title_Lote11" x="420" dy="0" font-weight="900" font-size="13" fill="#ffffff" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">LOTE 11</tspan>
+                    <tspan id="svg_crop_Lote11" x="420" dy="14" font-weight="700" font-size="11" fill="#6EE7B7" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">Libre</tspan>
+                    <tspan id="svg_pct_Lote11" x="420" dy="14" font-weight="800" font-size="11" fill="#FCD34D" style="filter: drop-shadow(0px 1.5px 3px rgba(0,0,0,0.95)); font-family: ui-sans-serif, system-ui, sans-serif;">0%</tspan>
                   </text>
                 </g>
               </svg>
@@ -214,3 +278,6 @@
                 </div>
             </div>
         </div>
+
+
+ 
